@@ -2,17 +2,19 @@ import json
 import os
 
 def getList(name):
-    return json.load(open(r'ExameWork\Lists\list_'+name+'.json'))
+    file_path = r"ExameWork\Lists\ary_" + name + ".json"
+    with open(file_path) as file:
+        return json.load(file)
 
 def createList(name):
     return
 
 def getLists():
-    data = os.listdir(path="ExameWork\Lists")
+    data = os.listdir(path="Lists")
     print(len(data));
     for i in range(len(data)):
         print((data[i].strip(".json")).strip("ary_"))
-        return
+    return
     
 
 match input():
