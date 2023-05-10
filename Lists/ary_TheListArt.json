@@ -1,50 +1,14 @@
 [
     {
-        "Name":"Milk",
-        "Cost":10.5
+        "Name": "Milk",
+        "Cost": 10.5
     },
     {
-        "Name":"Bread",
-        "Cost":14.0
+        "Name": "Cake",
+        "Price": 25
     },
     {
-        "Name":"Milk",
-        "Cost":10.5
-    },
-    {
-        "Name":"Bread",
-        "Cost":14.0
-    },
-    {
-        "Name":"Milk",
-        "Cost":10.5
-    },
-    {
-        "Name":"Bread",
-        "Cost":14.0
-    },
-    {
-        "Name":"Milk",
-        "Cost":10.5
-    },
-    {
-        "Name":"Bread",
-        "Cost":14.0
-    },
-    {
-        "Name":"Milk",
-        "Cost":10.5
-    },
-    {
-        "Name":"Bread",
-        "Cost":14.0
-    },
-    {
-        "Name":"Milk",
-        "Cost":10.5
-    },
-    {
-        "Name":"Bread",
-        "Cost":14.0
+        "Name": "Sausage",
+        "Price": 55
     }
 ]
