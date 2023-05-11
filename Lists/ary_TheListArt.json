@@ -4,6 +4,10 @@
         "Cost": 10.5
     },
     {
+        "Name": "Coco",
+        "Price": 15
+    },
+    {
         "Name": "Cake",
         "Price": 25
     },
