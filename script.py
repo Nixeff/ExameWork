@@ -119,6 +119,11 @@ def writeData():
         else:
             print("("+str(i+1)+") "+str(data[i]))
 
+def renameList():
+    newName = input("Where?:")
+    if (os.path.exists(r"ExameWork\Lists\ary_" + newName + ".json")):
+        os.rename(r"ExameWork\Lists\ary_" + newName + ".json", r"ExameWork\Lists\ary_" +input("New Name:")+".json")
+
 def checkIfInputIsAViableNumber(userInput):
     try:
         userInput = int(userInput)
@@ -178,9 +183,7 @@ def init():
                 case "renameList":
                     os.system('cls')
                     getLists()
-                    tempName = input("Where?:")
-                    if (os.path.exists(r"ExameWork\Lists\ary_" + tempName + ".json")):
-                        os.rename(r"ExameWork\Lists\ary_" + tempName + ".json", r"ExameWork\Lists\ary_" +input("New Name:")+".json")
+                    
                 case "loadList":
                     os.system('cls')
                     getLists()
