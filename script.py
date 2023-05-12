@@ -34,14 +34,11 @@ class GlobalSettings():
 settings = GlobalSettings()
 
 def getList():
-
-
     if (os.path.exists(r"ExameWork\Lists\ary_" + settings.getActiveFile() + ".json")):
         file_path = r"ExameWork\Lists\ary_" + settings.getActiveFile() + ".json"
         with open(file_path) as file:
             settings.setFileLoaded(True)
             settings.setActiveData(json.load(file))
-            
     else:
         print("File Dont exist")
         settings.setActiveFile("")
@@ -60,18 +57,14 @@ def createList(name : str):
     return
 
 def removeList(name: str):
-    if (os.path.exists(r"ExameWork\Lists\ary_"+name+".json")):
-        if(input("Are you sure? (y/n)") == "y"):
-            os.remove(r"ExameWork\Lists\ary_"+name+".json")
-        else:
-            print("")
-    else:
+    if (os.path.exists(r"ExameWork\Lists\ary_"+name+".json") == False):
         print("List dose not exist")
-    return
+        return
+    if(input("Are you sure? (y/n)") == "y"):
+        os.remove(r"ExameWork\Lists\ary_"+name+".json")
+    
 
 def getLists():
-
-
     data = os.listdir(path=r"ExameWork\Lists")
     for i in range(len(data)):
         print((data[i].strip(".json")).strip("ary_"))
@@ -124,15 +117,14 @@ def renameList():
     if (os.path.exists(r"ExameWork\Lists\ary_" + newName + ".json")):
         os.rename(r"ExameWork\Lists\ary_" + newName + ".json", r"ExameWork\Lists\ary_" +input("New Name:")+".json")
 
-def checkIfInputIsAViableNumber(userInput):
+def checkIfInputIsAViableNumber(userInput : int):
     try:
         userInput = int(userInput)
-        data = settings.getActiveData()
-        if(userInput < len(data)+1 and userInput >0):
-            settings.setActiveLine(userInput)
-        else:
+        if(userInput > len(settings.getActiveData()) or userInput <=0):
             print("No valid input given")
             sleep(1)
+            return
+        settings.setActiveLine(userInput)
     except:
         print("No valid input given")
         sleep(1)
@@ -207,5 +199,4 @@ def init():
                 case _:
                     print('Write "help" to get valid commands')
         
-
 init()
